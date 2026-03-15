@@ -1,10 +1,7 @@
 /**
  * •	JavaScript Fundamentals (ES6+):
  * array Method = Map Reduce filter
-o	let, const, var
-o	Arrow functions
-o	Template literals
-o	Destructuring & spread/rest
+
 o	Async programming (Promises, async/await)
 
  */

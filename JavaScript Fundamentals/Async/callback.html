@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Asyncronous Flow</h1>
+<p>Asynchronous code finishes later.</p>
+<p>This means you cannot return the result right away.</p>
+
+<p id="demo"></p>
+
+<script>
+// Function to display some data
+function myDisplayer(some) {
+  document.getElementById("demo").innerHTML += some + " ";
+}
+function done(value) {
+  myDisplayer(value);
+}
+
+  setTimeout(function() {
+    done(5);
+  }, 2000);
+</script>
+
+</body>
+</html>

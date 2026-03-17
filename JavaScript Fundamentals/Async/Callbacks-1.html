@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .Succes, .Defeat{
+    width: 400px;
+    border: 1px solid black;
+    height: 100px;
+    
+  }
+</style>
+<body>
+  <div class="Succes" id="Success" style="display: none;">Succesfull</div>  
+  <div class="Defeat" id="Defeat" style="display: none;"> Defeat</div>
+  <button onclick="Click('Success')">Click to see Success first</button>
+  <button onclick="Click('Defeat')">Click to see Defeat first</button>
+</body>
+<script>
+  // let result;
+// setTimeout(() => {
+//   result = 5;
+//   console.log(result);
+// }, 3000);
+// console.log(
+//   `result is ${result} because value is updated in SetTimeout FUnction`,
+// );
+//CallBack Solution
+// function passed as an Argument
+function HideAll(){
+  document.getElementById('Success').style.display = "none";
+  document.getElementById('Defeat').style.display = "none";
+  
+}
+function Success(){
+  document.getElementById('Success').style.display = "block"
+}
+function Defeat(){
+  document.getElementById('Defeat').style.display="block";
+}
+function Click(value){
+  if(value==='Success'){
+   setTimeout(()=>{
+    Success();
+      setTimeout(()=>{
+        Defeat();
+        setTimeout(HideAll,2000)
+      },3000);
+
+   },3000);
+  }
+  else if(value=== 'Defeat'){
+   setTimeout(()=>{
+    Defeat();
+      setTimeout(()=>{
+        Success();
+        setTimeout(HideAll,2000)
+      },3000);
+   },3000);
+  
+  }
+}
+</script>
+</html>
+
